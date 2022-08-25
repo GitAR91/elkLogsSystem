@@ -1,0 +1,876 @@
+2022-08-25 13:59:39.805  INFO  23077 --- [main] com.worker.worker.WorkerApplication      : Starting WorkerApplication using Java 16.0.2 on filatov-System-Product-Name with PID 23077 (/home/romanov/Desktop/logs/worker/target/classes started by romanov in /home/romanov/Desktop/logs/worker)
+2022-08-25 13:59:39.830  INFO  23077 --- [main] com.worker.worker.WorkerApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-08-25 13:59:48.382  INFO  23077 --- [main] com.worker.worker.WorkerApplication      : Started WorkerApplication in 9.28 seconds (JVM running for 11.797)
+2022-08-25 13:59:48.528  INFO  23077 --- [scheduled-task-pool-1] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = logs-module
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = logs-module-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.BytesDeserializer
+
+2022-08-25 13:59:48.668  INFO  23077 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-08-25 13:59:48.670  INFO  23077 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-08-25 13:59:48.670  INFO  23077 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1661410788667
+2022-08-25 13:59:48.671  INFO  23077 --- [scheduled-task-pool-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=logs-module, groupId=logs-module-group] Subscribed to topic(s): task-queue
+2022-08-25 13:59:53.680  WARN  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Error while fetching metadata with correlation id 2 : {task-queue=LEADER_NOT_AVAILABLE}
+2022-08-25 13:59:53.682  INFO  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Cluster ID: sMlKwu52SfKoJ0po5QGQQQ
+2022-08-25 13:59:53.795  WARN  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Error while fetching metadata with correlation id 4 : {task-queue=LEADER_NOT_AVAILABLE}
+2022-08-25 13:59:53.911  WARN  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Error while fetching metadata with correlation id 5 : {task-queue=LEADER_NOT_AVAILABLE}
+2022-08-25 13:59:54.031  WARN  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Error while fetching metadata with correlation id 7 : {task-queue=LEADER_NOT_AVAILABLE}
+2022-08-25 13:59:54.192  WARN  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Error while fetching metadata with correlation id 9 : {task-queue=LEADER_NOT_AVAILABLE}
+2022-08-25 13:59:54.333  WARN  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Error while fetching metadata with correlation id 11 : {task-queue=LEADER_NOT_AVAILABLE}
+2022-08-25 13:59:54.558  WARN  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Error while fetching metadata with correlation id 13 : {task-queue=LEADER_NOT_AVAILABLE}
+2022-08-25 13:59:54.794  WARN  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Error while fetching metadata with correlation id 15 : {task-queue=LEADER_NOT_AVAILABLE}
+2022-08-25 13:59:54.971  INFO  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting the last seen epoch of partition task-queue-0 to 0 since the associated topicId changed from null to Qm-qO9S6QCi7LvI0BXQ43A
+2022-08-25 13:59:58.912  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator filatov-System-Product-Name:9092 (id: 2147483647 rack: null)
+2022-08-25 13:59:58.915  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 13:59:58.967  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: need to re-join with the given member-id
+2022-08-25 13:59:58.968  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 13:59:59.019  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully joined group with generation Generation{generationId=1, memberId='logs-module-d4b3b8d9-026e-4365-8ae6-f39e634dae6f', protocol='range'}
+2022-08-25 13:59:59.021  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Finished assignment for group at generation 1: {logs-module-d4b3b8d9-026e-4365-8ae6-f39e634dae6f=Assignment(partitions=[task-queue-0])}
+2022-08-25 13:59:59.165  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully synced group in generation Generation{generationId=1, memberId='logs-module-d4b3b8d9-026e-4365-8ae6-f39e634dae6f', protocol='range'}
+2022-08-25 13:59:59.165  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Notifying assignor about the new Assignment(partitions=[task-queue-0])
+2022-08-25 13:59:59.167  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Adding newly assigned partitions: task-queue-0
+2022-08-25 13:59:59.187  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Found no committed offset for partition task-queue-0
+2022-08-25 13:59:59.204  INFO  23077 --- [scheduled-task-pool-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting offset for partition task-queue-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[filatov-System-Product-Name:9092 (id: 0 rack: null)], epoch=0}}.
+2022-08-25 14:08:53.934  INFO  23077 --- [scheduled-task-pool-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Node -1 disconnected.
+2022-08-25 15:03:22.424  INFO  26562 --- [main] c.e.e.ElkLogSystemApplication            : Starting ElkLogSystemApplication using Java 16.0.2 on filatov-System-Product-Name with PID 26562 (/home/romanov/Desktop/logs/elkLogSystem/target/classes started by romanov in /home/romanov/Desktop/logs/elkLogSystem)
+2022-08-25 15:03:22.427  INFO  26562 --- [main] c.e.e.ElkLogSystemApplication            : No active profile set, falling back to 1 default profile: "default"
+2022-08-25 15:03:23.882  INFO  26562 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-25 15:03:23.895  INFO  26562 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-25 15:03:23.896  INFO  26562 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-25 15:03:24.063  INFO  26562 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-25 15:03:24.063  INFO  26562 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1590 ms
+2022-08-25 15:03:24.913  INFO  26562 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-25 15:03:24.925  INFO  26562 --- [main] c.e.e.ElkLogSystemApplication            : Started ElkLogSystemApplication in 3.168 seconds (JVM running for 4.287)
+2022-08-25 15:11:12.374  INFO  26913 --- [main] com.worker.worker.WorkerApplication      : Starting WorkerApplication using Java 16.0.2 on filatov-System-Product-Name with PID 26913 (/home/romanov/Desktop/logs/worker/target/classes started by romanov in /home/romanov/Desktop/logs/worker)
+2022-08-25 15:11:12.377  INFO  26913 --- [main] com.worker.worker.WorkerApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-08-25 15:11:13.325  INFO  26913 --- [main] com.worker.worker.WorkerApplication      : Started WorkerApplication in 1.284 seconds (JVM running for 1.864)
+2022-08-25 15:11:13.340  INFO  26913 --- [scheduled-task-pool-1] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = logs-module
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = logs-module-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.BytesDeserializer
+
+2022-08-25 15:11:13.412  INFO  26913 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-08-25 15:11:13.413  INFO  26913 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-08-25 15:11:13.413  INFO  26913 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1661415073410
+2022-08-25 15:11:13.414  INFO  26913 --- [scheduled-task-pool-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=logs-module, groupId=logs-module-group] Subscribed to topic(s): task-queue
+2022-08-25 15:11:13.689  INFO  26913 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting the last seen epoch of partition task-queue-0 to 0 since the associated topicId changed from null to ZvEW9JtORJmYq0LOMmDGFA
+2022-08-25 15:11:13.693  INFO  26913 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Cluster ID: SBBpG-_3TUajPSHQ6cFLVA
+2022-08-25 15:11:13.694  INFO  26913 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:11:13.697  INFO  26913 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:11:13.721  INFO  26913 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: need to re-join with the given member-id
+2022-08-25 15:11:13.722  INFO  26913 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:11:13.740  INFO  26913 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully joined group with generation Generation{generationId=15, memberId='logs-module-45f7fa4b-960c-4569-93b2-129f2245711d', protocol='range'}
+2022-08-25 15:11:13.742  INFO  26913 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Finished assignment for group at generation 15: {logs-module-45f7fa4b-960c-4569-93b2-129f2245711d=Assignment(partitions=[task-queue-0])}
+2022-08-25 15:11:13.796  INFO  26913 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully synced group in generation Generation{generationId=15, memberId='logs-module-45f7fa4b-960c-4569-93b2-129f2245711d', protocol='range'}
+2022-08-25 15:11:13.797  INFO  26913 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Notifying assignor about the new Assignment(partitions=[task-queue-0])
+2022-08-25 15:11:13.799  INFO  26913 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Adding newly assigned partitions: task-queue-0
+2022-08-25 15:11:13.815  INFO  26913 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Setting offset for partition task-queue-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2022-08-25 15:11:14.086  INFO CorrelationId=d63d54f0-b851-4c45-a34c-e2012fbe1174 26913 --- [pool-2-thread-1] com.worker.worker.service.Worker         : Thread number 1 .In worker with task "Some task"
+2022-08-25 15:11:14.086  INFO CorrelationId=d63d54f0-b851-4c45-a34c-e2012fbe1174 26913 --- [pool-2-thread-1] com.worker.worker.service.Worker         : Thread number 1 .Task "Some task" completed
+2022-08-25 15:11:44.895  INFO  27076 --- [main] c.e.e.ElkLogSystemApplication            : Starting ElkLogSystemApplication using Java 16.0.2 on filatov-System-Product-Name with PID 27076 (/home/romanov/Desktop/logs/elkLogSystem/target/classes started by romanov in /home/romanov/Desktop/logs/elkLogSystem)
+2022-08-25 15:11:44.898  INFO  27076 --- [main] c.e.e.ElkLogSystemApplication            : No active profile set, falling back to 1 default profile: "default"
+2022-08-25 15:11:45.852  INFO  27076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-25 15:11:45.863  INFO  27076 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-25 15:11:45.863  INFO  27076 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-25 15:11:45.960  INFO  27076 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-25 15:11:45.960  INFO  27076 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1005 ms
+2022-08-25 15:11:46.543  INFO  27076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-25 15:11:46.557  INFO  27076 --- [main] c.e.e.ElkLogSystemApplication            : Started ElkLogSystemApplication in 2.057 seconds (JVM running for 6.655)
+2022-08-25 15:11:56.426  INFO  27076 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-25 15:11:56.426  INFO  27076 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-25 15:11:56.427  INFO  27076 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-08-25 15:11:56.486  INFO CorrelationId=5b341026-7797-49f9-b279-b08913b1d287 27076 --- [http-nio-8080-exec-1] c.e.e.conrollers.MainController          : On index page
+2022-08-25 15:11:56.511  INFO CorrelationId=5b341026-7797-49f9-b279-b08913b1d287 27076 --- [http-nio-8080-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = logs-module
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2022-08-25 15:11:56.537  INFO CorrelationId=5b341026-7797-49f9-b279-b08913b1d287 27076 --- [http-nio-8080-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=logs-module] Instantiated an idempotent producer.
+2022-08-25 15:11:56.579  INFO CorrelationId=5b341026-7797-49f9-b279-b08913b1d287 27076 --- [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-08-25 15:11:56.581  INFO CorrelationId=5b341026-7797-49f9-b279-b08913b1d287 27076 --- [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-08-25 15:11:56.581  INFO CorrelationId=5b341026-7797-49f9-b279-b08913b1d287 27076 --- [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1661415116578
+2022-08-25 15:11:56.891  INFO  27076 --- [kafka-producer-network-thread | logs-module] org.apache.kafka.clients.Metadata        : [Producer clientId=logs-module] Resetting the last seen epoch of partition task-queue-0 to 0 since the associated topicId changed from null to ZvEW9JtORJmYq0LOMmDGFA
+2022-08-25 15:11:56.894  INFO  27076 --- [kafka-producer-network-thread | logs-module] org.apache.kafka.clients.Metadata        : [Producer clientId=logs-module] Cluster ID: SBBpG-_3TUajPSHQ6cFLVA
+2022-08-25 15:11:56.895  INFO  27076 --- [kafka-producer-network-thread | logs-module] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=logs-module] ProducerId set to 4000 with epoch 0
+2022-08-25 15:11:57.018  INFO CorrelationId=5b341026-7797-49f9-b279-b08913b1d287 26913 --- [pool-2-thread-3] com.worker.worker.service.Worker         : Thread number 1 .In worker with task "Some task"
+2022-08-25 15:11:57.019  INFO CorrelationId=5b341026-7797-49f9-b279-b08913b1d287 26913 --- [pool-2-thread-3] com.worker.worker.service.Worker         : Thread number 1 .Task "Some task" completed
+2022-08-25 15:11:57.019  INFO CorrelationId=5b341026-7797-49f9-b279-b08913b1d287 26913 --- [pool-2-thread-2] com.worker.worker.service.Worker         : Thread number 1 .In worker with task "Some task"
+2022-08-25 15:11:57.019  INFO CorrelationId=5b341026-7797-49f9-b279-b08913b1d287 26913 --- [pool-2-thread-2] com.worker.worker.service.Worker         : Thread number 1 .Task "Some task" completed
+2022-08-25 15:11:57.036  INFO  27076 --- [single-1] c.e.elkLogSystem.kafka.KafkaProducer     : Message Task sent successfully, topic-partition=task-queue-0 offset=5
+2022-08-25 15:11:57.036  INFO  27076 --- [single-1] c.e.elkLogSystem.kafka.KafkaProducer     : Message Task sent successfully, topic-partition=task-queue-0 offset=6
+2022-08-25 15:19:26.784  INFO  27541 --- [main] com.worker.worker.WorkerApplication      : Starting WorkerApplication using Java 16.0.2 on filatov-System-Product-Name with PID 27541 (/home/romanov/Desktop/logs/worker/target/classes started by romanov in /home/romanov/Desktop/logs/worker)
+2022-08-25 15:19:26.786  INFO  27541 --- [main] com.worker.worker.WorkerApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-08-25 15:19:27.771  INFO  27541 --- [main] com.worker.worker.WorkerApplication      : Started WorkerApplication in 1.335 seconds (JVM running for 2.046)
+2022-08-25 15:19:27.786  INFO  27541 --- [scheduled-task-pool-1] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = logs-module
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = logs-module-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.BytesDeserializer
+
+2022-08-25 15:19:27.856  INFO  27541 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-08-25 15:19:27.857  INFO  27541 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-08-25 15:19:27.857  INFO  27541 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1661415567855
+2022-08-25 15:19:27.858  INFO  27541 --- [scheduled-task-pool-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=logs-module, groupId=logs-module-group] Subscribed to topic(s): task-queue
+2022-08-25 15:19:28.104  INFO  27541 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting the last seen epoch of partition task-queue-0 to 0 since the associated topicId changed from null to ZvEW9JtORJmYq0LOMmDGFA
+2022-08-25 15:19:28.107  INFO  27541 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Cluster ID: SBBpG-_3TUajPSHQ6cFLVA
+2022-08-25 15:19:28.109  INFO  27541 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:19:28.112  INFO  27541 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:19:28.126  INFO  27541 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: need to re-join with the given member-id
+2022-08-25 15:19:28.126  INFO  27541 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:19:28.129  INFO  27541 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully joined group with generation Generation{generationId=17, memberId='logs-module-5e4051da-bdc0-4106-85fc-5b14aa82ccce', protocol='range'}
+2022-08-25 15:19:28.131  INFO  27541 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Finished assignment for group at generation 17: {logs-module-5e4051da-bdc0-4106-85fc-5b14aa82ccce=Assignment(partitions=[task-queue-0])}
+2022-08-25 15:19:28.137  INFO  27541 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully synced group in generation Generation{generationId=17, memberId='logs-module-5e4051da-bdc0-4106-85fc-5b14aa82ccce', protocol='range'}
+2022-08-25 15:19:28.137  INFO  27541 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Notifying assignor about the new Assignment(partitions=[task-queue-0])
+2022-08-25 15:19:28.139  INFO  27541 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Adding newly assigned partitions: task-queue-0
+2022-08-25 15:19:28.149  INFO  27541 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Setting offset for partition task-queue-0 to the committed offset FetchPosition{offset=7, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2022-08-25 15:19:36.504  INFO  27650 --- [main] com.worker.worker.WorkerApplication      : Starting WorkerApplication using Java 16.0.2 on filatov-System-Product-Name with PID 27650 (/home/romanov/Desktop/logs/worker/target/classes started by romanov in /home/romanov/Desktop/logs/worker)
+2022-08-25 15:19:36.529  INFO  27650 --- [main] com.worker.worker.WorkerApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-08-25 15:19:43.504  INFO  27650 --- [main] com.worker.worker.WorkerApplication      : Started WorkerApplication in 7.403 seconds (JVM running for 8.232)
+2022-08-25 15:19:43.531  INFO  27650 --- [scheduled-task-pool-1] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = logs-module
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = logs-module-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.BytesDeserializer
+
+2022-08-25 15:19:43.613  INFO  27650 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-08-25 15:19:43.615  INFO  27650 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-08-25 15:19:43.615  INFO  27650 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1661415583612
+2022-08-25 15:19:43.616  INFO  27650 --- [scheduled-task-pool-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=logs-module, groupId=logs-module-group] Subscribed to topic(s): task-queue
+2022-08-25 15:19:43.900  INFO  27650 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting the last seen epoch of partition task-queue-0 to 0 since the associated topicId changed from null to ZvEW9JtORJmYq0LOMmDGFA
+2022-08-25 15:19:43.904  INFO  27650 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Cluster ID: SBBpG-_3TUajPSHQ6cFLVA
+2022-08-25 15:19:43.905  INFO  27650 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:19:43.907  INFO  27650 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:19:43.920  INFO  27650 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: need to re-join with the given member-id
+2022-08-25 15:19:43.920  INFO  27650 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:20:06.152  INFO  27750 --- [main] com.worker.worker.WorkerApplication      : Starting WorkerApplication using Java 16.0.2 on filatov-System-Product-Name with PID 27750 (/home/romanov/Desktop/logs/worker/target/classes started by romanov in /home/romanov/Desktop/logs/worker)
+2022-08-25 15:20:06.157  INFO  27750 --- [main] com.worker.worker.WorkerApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-08-25 15:20:07.200  INFO  27750 --- [main] com.worker.worker.WorkerApplication      : Started WorkerApplication in 1.485 seconds (JVM running for 2.301)
+2022-08-25 15:20:07.221  INFO  27750 --- [scheduled-task-pool-1] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = logs-module
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = logs-module-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.BytesDeserializer
+
+2022-08-25 15:20:07.302  INFO  27750 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-08-25 15:20:07.304  INFO  27750 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-08-25 15:20:07.304  INFO  27750 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1661415607301
+2022-08-25 15:20:07.305  INFO  27750 --- [scheduled-task-pool-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=logs-module, groupId=logs-module-group] Subscribed to topic(s): task-queue
+2022-08-25 15:20:13.116  INFO  27750 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting the last seen epoch of partition task-queue-0 to 0 since the associated topicId changed from null to ZvEW9JtORJmYq0LOMmDGFA
+2022-08-25 15:20:13.133  INFO  27750 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Cluster ID: SBBpG-_3TUajPSHQ6cFLVA
+2022-08-25 15:20:13.137  INFO  27750 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:20:13.147  INFO  27750 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:20:13.193  INFO  27750 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: need to re-join with the given member-id
+2022-08-25 15:20:13.194  INFO  27750 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:20:16.136  INFO  27750 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully joined group with generation Generation{generationId=18, memberId='logs-module-66e45102-9c6b-45b2-8d48-5c7b377b6e92', protocol='range'}
+2022-08-25 15:20:16.147  INFO  27750 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Finished assignment for group at generation 18: {logs-module-66e45102-9c6b-45b2-8d48-5c7b377b6e92=Assignment(partitions=[]), logs-module-62ac3395-0128-4df8-8f78-abde7e1f385b=Assignment(partitions=[task-queue-0])}
+2022-08-25 15:20:16.161  INFO  27750 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully synced group in generation Generation{generationId=18, memberId='logs-module-66e45102-9c6b-45b2-8d48-5c7b377b6e92', protocol='range'}
+2022-08-25 15:20:16.162  INFO  27750 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Notifying assignor about the new Assignment(partitions=[])
+2022-08-25 15:20:16.163  INFO  27750 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Adding newly assigned partitions: 
+2022-08-25 15:20:57.145  INFO  27076 --- [kafka-producer-network-thread | logs-module] org.apache.kafka.clients.NetworkClient   : [Producer clientId=logs-module] Node -1 disconnected.
+2022-08-25 15:21:09.294  INFO  27915 --- [main] com.worker.worker.WorkerApplication      : Starting WorkerApplication using Java 16.0.2 on filatov-System-Product-Name with PID 27915 (/home/romanov/Desktop/logs/worker/target/classes started by romanov in /home/romanov/Desktop/logs/worker)
+2022-08-25 15:21:09.297  INFO  27915 --- [main] com.worker.worker.WorkerApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-08-25 15:21:10.333  INFO  27915 --- [main] com.worker.worker.WorkerApplication      : Started WorkerApplication in 1.494 seconds (JVM running for 2.463)
+2022-08-25 15:21:10.353  INFO  27915 --- [scheduled-task-pool-1] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = logs-module
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = logs-module-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.BytesDeserializer
+
+2022-08-25 15:21:10.440  INFO  27915 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-08-25 15:21:10.441  INFO  27915 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-08-25 15:21:10.442  INFO  27915 --- [scheduled-task-pool-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1661415670439
+2022-08-25 15:21:10.443  INFO  27915 --- [scheduled-task-pool-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=logs-module, groupId=logs-module-group] Subscribed to topic(s): task-queue
+2022-08-25 15:21:13.418  INFO  27915 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting the last seen epoch of partition task-queue-0 to 0 since the associated topicId changed from null to ZvEW9JtORJmYq0LOMmDGFA
+2022-08-25 15:21:13.423  INFO  27915 --- [scheduled-task-pool-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=logs-module, groupId=logs-module-group] Cluster ID: SBBpG-_3TUajPSHQ6cFLVA
+2022-08-25 15:21:13.424  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:21:13.427  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:21:13.452  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: need to re-join with the given member-id
+2022-08-25 15:21:13.452  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:21:44.836  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully joined group with generation Generation{generationId=19, memberId='logs-module-79895083-ac46-4cf6-81ca-a99fd73a920c', protocol='range'}
+2022-08-25 15:21:44.839  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Finished assignment for group at generation 19: {logs-module-79895083-ac46-4cf6-81ca-a99fd73a920c=Assignment(partitions=[task-queue-0])}
+2022-08-25 15:21:44.846  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully synced group in generation Generation{generationId=19, memberId='logs-module-79895083-ac46-4cf6-81ca-a99fd73a920c', protocol='range'}
+2022-08-25 15:21:44.846  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Notifying assignor about the new Assignment(partitions=[task-queue-0])
+2022-08-25 15:21:44.848  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Adding newly assigned partitions: task-queue-0
+2022-08-25 15:21:44.859  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Setting offset for partition task-queue-0 to the committed offset FetchPosition{offset=7, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2022-08-25 15:37:11.535  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Node 2147482646 disconnected.
+2022-08-25 15:37:11.536  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Node -1 disconnected.
+2022-08-25 15:37:11.541  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Group coordinator localhost:9092 (id: 2147482646 rack: null) is unavailable or invalid due to cause: coordinator unavailable.isDisconnected: true. Rediscovery will be attempted.
+2022-08-25 15:37:11.541  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Node 1001 disconnected.
+2022-08-25 15:37:11.542  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Cancelled in-flight METADATA request with correlation id 12 due to node 1001 being disconnected (elapsed time since creation: 880ms, elapsed time since send: 880ms, request timeout: 30000ms)
+2022-08-25 15:37:11.542  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Cancelled in-flight FIND_COORDINATOR request with correlation id 13 due to node 1001 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2022-08-25 15:37:11.659  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:37:12.217  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Attempt to heartbeat with Generation{generationId=19, memberId='logs-module-79895083-ac46-4cf6-81ca-a99fd73a920c', protocol='range'} and group instance id Optional.empty failed due to UNKNOWN_MEMBER_ID, resetting generation
+2022-08-25 15:37:12.217  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting generation due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2022-08-25 15:37:12.217  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2022-08-25 15:37:12.219  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Failing OffsetCommit request since the consumer is not part of an active group
+2022-08-25 15:37:12.223 ERROR  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Offset commit failed on partition task-queue-0 at offset 7: The coordinator is not aware of this member.
+2022-08-25 15:37:12.224  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] OffsetCommit failed with Generation{generationId=19, memberId='logs-module-79895083-ac46-4cf6-81ca-a99fd73a920c', protocol='range'}: The coordinator is not aware of this member.
+2022-08-25 15:37:12.225  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting generation due to: encountered UNKNOWN_MEMBER_ID from OFFSET_COMMIT response
+2022-08-25 15:37:12.226  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: encountered UNKNOWN_MEMBER_ID from OFFSET_COMMIT response
+2022-08-25 15:37:12.227  WARN  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Asynchronous auto-commit of offsets {task-queue-0=OffsetAndMetadata{offset=7, leaderEpoch=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2022-08-25 15:37:12.228  WARN  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Synchronous auto-commit of offsets {task-queue-0=OffsetAndMetadata{offset=7, leaderEpoch=0, metadata=''}} failed: Offset commit cannot be completed since the consumer is not part of an active group for auto partition assignment; it is likely that the consumer was kicked out of the group.
+2022-08-25 15:37:12.228  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Giving away all assigned partitions as lost since generation has been reset,indicating that consumer is no longer part of the group
+2022-08-25 15:37:12.229  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Lost previously assigned partitions task-queue-0
+2022-08-25 15:37:12.230  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:37:12.234  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: need to re-join with the given member-id
+2022-08-25 15:37:12.237  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Revoke previously assigned partitions 
+2022-08-25 15:37:12.238  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:37:12.245  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully joined group with generation Generation{generationId=21, memberId='logs-module-31337dc5-ea77-4573-a342-f82a2e1b6592', protocol='range'}
+2022-08-25 15:37:12.246  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Finished assignment for group at generation 21: {logs-module-31337dc5-ea77-4573-a342-f82a2e1b6592=Assignment(partitions=[task-queue-0])}
+2022-08-25 15:37:12.251  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully synced group in generation Generation{generationId=21, memberId='logs-module-31337dc5-ea77-4573-a342-f82a2e1b6592', protocol='range'}
+2022-08-25 15:37:12.252  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Notifying assignor about the new Assignment(partitions=[task-queue-0])
+2022-08-25 15:37:12.253  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Adding newly assigned partitions: task-queue-0
+2022-08-25 15:37:12.257  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Setting offset for partition task-queue-0 to the committed offset FetchPosition{offset=7, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2022-08-25 15:38:01.692  INFO CorrelationId=fc10586e-329d-4eb2-b4f0-a809ae842af4 27076 --- [http-nio-8080-exec-5] c.e.e.conrollers.MainController          : On index page
+2022-08-25 15:38:01.695  INFO  27076 --- [kafka-producer-network-thread | logs-module] org.apache.kafka.clients.Metadata        : [Producer clientId=logs-module] Resetting the last seen epoch of partition task-queue-0 to 0 since the associated topicId changed from null to ZvEW9JtORJmYq0LOMmDGFA
+2022-08-25 15:38:01.708  INFO  27076 --- [single-1] c.e.elkLogSystem.kafka.KafkaProducer     : Message Task sent successfully, topic-partition=task-queue-0 offset=7
+2022-08-25 15:38:01.708  INFO  27076 --- [single-1] c.e.elkLogSystem.kafka.KafkaProducer     : Message Task sent successfully, topic-partition=task-queue-0 offset=8
+2022-08-25 15:38:07.224  INFO CorrelationId=fc10586e-329d-4eb2-b4f0-a809ae842af4 27915 --- [pool-2-thread-1] com.worker.worker.service.Worker         : Thread number 1. In worker with task "Some task"
+2022-08-25 15:38:07.224  INFO CorrelationId=fc10586e-329d-4eb2-b4f0-a809ae842af4 27915 --- [pool-2-thread-2] com.worker.worker.service.Worker         : Thread number 1. In worker with task "Some task"
+2022-08-25 15:38:07.225  INFO CorrelationId=fc10586e-329d-4eb2-b4f0-a809ae842af4 27915 --- [pool-2-thread-2] com.worker.worker.service.Worker         : Thread number 1. Task "Some task" completed
+2022-08-25 15:38:07.225  INFO CorrelationId=fc10586e-329d-4eb2-b4f0-a809ae842af4 27915 --- [pool-2-thread-1] com.worker.worker.service.Worker         : Thread number 1. Task "Some task" completed
+2022-08-25 15:38:28.636  INFO CorrelationId=4cd7944b-7f74-4076-affb-c3d029cffddc 27076 --- [http-nio-8080-exec-6] c.e.e.conrollers.MainController          : On index page
+2022-08-25 15:38:28.643  INFO  27076 --- [single-1] c.e.elkLogSystem.kafka.KafkaProducer     : Message Task sent successfully, topic-partition=task-queue-0 offset=9
+2022-08-25 15:38:28.647  INFO  27076 --- [single-1] c.e.elkLogSystem.kafka.KafkaProducer     : Message Task sent successfully, topic-partition=task-queue-0 offset=10
+2022-08-25 15:38:47.047  INFO CorrelationId=4cd7944b-7f74-4076-affb-c3d029cffddc 27915 --- [pool-2-thread-3] com.worker.worker.service.Worker         : Thread number 1. In worker with task "Some task"
+2022-08-25 15:38:47.047  INFO CorrelationId=4cd7944b-7f74-4076-affb-c3d029cffddc 27915 --- [pool-2-thread-3] com.worker.worker.service.Worker         : Thread number 1. Task "Some task" completed
+2022-08-25 15:42:03.248  INFO CorrelationId=4cd7944b-7f74-4076-affb-c3d029cffddc 27915 --- [pool-2-thread-2] com.worker.worker.service.Worker         : Thread number 1. In worker with task "Some task"
+2022-08-25 15:42:03.248  INFO CorrelationId=4cd7944b-7f74-4076-affb-c3d029cffddc 27915 --- [pool-2-thread-2] com.worker.worker.service.Worker         : Thread number 1. Task "Some task" completed
+2022-08-25 15:42:03.249  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Group coordinator localhost:9092 (id: 2147482646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response.isDisconnected: false. Rediscovery will be attempted.
+2022-08-25 15:42:03.250  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Requesting disconnect from last known coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:42:03.250  INFO  27915 --- [kafka-coordinator-heartbeat-thread | logs-module-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=logs-module, groupId=logs-module-group] Client requested disconnect from node 2147482646
+2022-08-25 15:42:03.255  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:42:03.257  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:42:03.258  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Group coordinator localhost:9092 (id: 2147482646 rack: null) is unavailable or invalid due to cause: coordinator unavailable.isDisconnected: false. Rediscovery will be attempted.
+2022-08-25 15:42:03.259  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Requesting disconnect from last known coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:42:03.364  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2022-08-25 15:42:03.379  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Attempt to heartbeat with Generation{generationId=21, memberId='logs-module-31337dc5-ea77-4573-a342-f82a2e1b6592', protocol='range'} and group instance id Optional.empty failed due to UNKNOWN_MEMBER_ID, resetting generation
+2022-08-25 15:42:03.380  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting generation due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2022-08-25 15:42:03.381  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2022-08-25 15:42:03.382  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Failing OffsetCommit request since the consumer is not part of an active group
+2022-08-25 15:42:03.384 ERROR  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Offset commit failed on partition task-queue-0 at offset 11: The coordinator is not aware of this member.
+2022-08-25 15:42:03.385  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] OffsetCommit failed with Generation{generationId=21, memberId='logs-module-31337dc5-ea77-4573-a342-f82a2e1b6592', protocol='range'}: The coordinator is not aware of this member.
+2022-08-25 15:42:03.386  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Resetting generation due to: encountered UNKNOWN_MEMBER_ID from OFFSET_COMMIT response
+2022-08-25 15:42:03.387  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: encountered UNKNOWN_MEMBER_ID from OFFSET_COMMIT response
+2022-08-25 15:42:03.388  WARN  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Asynchronous auto-commit of offsets {task-queue-0=OffsetAndMetadata{offset=11, leaderEpoch=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2022-08-25 15:42:03.389  WARN  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Synchronous auto-commit of offsets {task-queue-0=OffsetAndMetadata{offset=11, leaderEpoch=0, metadata=''}} failed: Offset commit cannot be completed since the consumer is not part of an active group for auto partition assignment; it is likely that the consumer was kicked out of the group.
+2022-08-25 15:42:03.389  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Giving away all assigned partitions as lost since generation has been reset,indicating that consumer is no longer part of the group
+2022-08-25 15:42:03.390  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Lost previously assigned partitions task-queue-0
+2022-08-25 15:42:03.391  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:42:03.394  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Request joining group due to: need to re-join with the given member-id
+2022-08-25 15:42:03.395  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Revoke previously assigned partitions 
+2022-08-25 15:42:03.396  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group
+2022-08-25 15:42:03.402  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully joined group with generation Generation{generationId=23, memberId='logs-module-bf145f69-b82c-4099-8624-fb0c286fb602', protocol='range'}
+2022-08-25 15:42:03.403  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Finished assignment for group at generation 23: {logs-module-bf145f69-b82c-4099-8624-fb0c286fb602=Assignment(partitions=[task-queue-0])}
+2022-08-25 15:42:03.409  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Successfully synced group in generation Generation{generationId=23, memberId='logs-module-bf145f69-b82c-4099-8624-fb0c286fb602', protocol='range'}
+2022-08-25 15:42:03.410  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Notifying assignor about the new Assignment(partitions=[task-queue-0])
+2022-08-25 15:42:03.411  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Adding newly assigned partitions: task-queue-0
+2022-08-25 15:42:03.415  INFO  27915 --- [scheduled-task-pool-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=logs-module, groupId=logs-module-group] Setting offset for partition task-queue-0 to the committed offset FetchPosition{offset=10, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2022-08-25 15:42:07.315  INFO CorrelationId=4cd7944b-7f74-4076-affb-c3d029cffddc 27915 --- [pool-2-thread-1] com.worker.worker.service.Worker         : Thread number 1. In worker with task "Some task"
+2022-08-25 15:42:07.315  INFO CorrelationId=4cd7944b-7f74-4076-affb-c3d029cffddc 27915 --- [pool-2-thread-1] com.worker.worker.service.Worker         : Thread number 1. Task "Some task" completed
+2022-08-25 16:12:44.943  WARN  27076 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'kafkaSender' threw an exception: java.lang.NoSuchMethodError: 'void org.apache.kafka.clients.producer.Producer.close(long, java.util.concurrent.TimeUnit)'
