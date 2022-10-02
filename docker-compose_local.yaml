@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.2"
 
 services:
   logs-zookeeper:
@@ -30,6 +30,27 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
+
+  logs-application:
+    build:
+      context: ./elkLogSystem
+    volumes: 
+    - ./logs:/opt/logs
+    depends_on:
+      - logs-zookeeper
+      - logs-kafka
+    ports:
+      - 7080:8080
+      
+  logs-worker:
+    build:
+      context: ./worker
+    volumes: 
+    - ./logs:/opt/logs
+    depends_on:
+      - logs-zookeeper
+      - logs-kafka
+
 
 networks:
   net-logs:

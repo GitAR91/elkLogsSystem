@@ -1,0 +1,10 @@
+logging:
+  file:
+    name: /opt/logs/logs.log
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: logs-kafka:9092
+    consumer:
+      bootstrap-servers: logs-kafka:9092

@@ -37,7 +37,6 @@ public class MainController {
         log.info("On index page");
         Task task = new Task("Some task", requestID);
         kafkaProducer.sendToWorker(task);
-        kafkaProducer.sendToWorker(task);
         return ResponseEntity.ok("Success!");
     }
 }
