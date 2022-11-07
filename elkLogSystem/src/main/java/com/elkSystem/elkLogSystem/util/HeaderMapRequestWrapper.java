@@ -12,12 +12,6 @@ public class HeaderMapRequestWrapper extends HttpServletRequestWrapper {
 
     private Map<String, String> headerMap = new HashMap<String, String>();
 
-    /**
-     * add a header with given name and value
-     *
-     * @param name
-     * @param value
-     */
     public void addHeader(String name, String value) {
         headerMap.put(name, value);
     }
@@ -31,9 +25,6 @@ public class HeaderMapRequestWrapper extends HttpServletRequestWrapper {
         return headerValue;
     }
 
-    /**
-     * get the Header names
-     */
     @Override
     public Enumeration<String> getHeaderNames() {
         List<String> names = Collections.list(super.getHeaderNames());

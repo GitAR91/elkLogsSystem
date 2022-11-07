@@ -20,13 +20,11 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: logs-zookeeper:2181
       KAFKA_CREATE_TOPICS: "task-queue:1:1:delete, status-queue:1:1:delete"
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://logs-kafka:9092
-      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
-
+      KAFKA_LISTENERS: PLAINTEXT://:9092
     depends_on:
       - logs-zookeeper
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    restart: always
 
   logs-application:
     build:
@@ -89,6 +87,20 @@ services:
       - 5601:5601
     depends_on:
       - elasticsearch
+    networks:
+      - net-logs
+      
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.4.2
+    container_name: logstash
+    volumes:
+      - ./elk/logstash/:/usr/share/logstash/pipeline
+      - ./logs:/logs
+    command: logstash -f /usr/share/logstash/pipeline/logstash.conf 
+    depends_on:
+      - elasticsearch
+    ports:
+      - '9600:9600'    
     networks:
       - net-logs
 

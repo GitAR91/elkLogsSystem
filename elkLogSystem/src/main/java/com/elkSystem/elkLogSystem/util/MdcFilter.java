@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -15,11 +16,15 @@ public class MdcFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         String requestId = getCorrelationId();
-        MDC.put("CorrelationId", requestId);
+        MDC.put("RequestId", requestId);
         HttpServletRequest req = (HttpServletRequest) request;
         HeaderMapRequestWrapper requestWrapper = new HeaderMapRequestWrapper(req);
-        requestWrapper.addHeader("CorrelationId", requestId);
-        chain.doFilter(requestWrapper, response);
+        requestWrapper.addHeader("RequestId", requestId);
+
+        HttpServletResponse res = (HttpServletResponse) response;
+        res.setHeader("RequestId", requestId);
+
+        chain.doFilter(requestWrapper, res);
     }
 
     private String getCorrelationId() {
