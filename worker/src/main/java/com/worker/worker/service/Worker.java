@@ -17,10 +17,9 @@ public class Worker {
     public void process(Task task, int count){
         try{
             Thread.sleep(1000);
-            MDC.put("CorrelationId", task.getRequestId());
+            MDC.put("RequestId", task.getRequestId());
             log.info("Thread number " + count + ". In worker with task \"" + task.getTask() + "\"");
-            log.info("Thread number " + count + ". Task \"" + task.getTask() + "\"" + " completed");
-            MDC.remove("CorrelationId");
+            MDC.remove("RequestId");
         } catch (Exception e){
             log.error( "Thread number " + count + ". " + e.getMessage());
         }

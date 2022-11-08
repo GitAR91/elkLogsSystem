@@ -4,6 +4,7 @@ import com.elkSystem.elkLogSystem.models.Task;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -27,7 +28,8 @@ public class KafkaProducer {
 
     public void sendToWorker(Task task) {
         if (task != null) {
-            System.out.println(pointCheckingTopic);
+            String requestId = MDC.get("RequestId");
+            task.setRequestId(requestId);
             sendData(pointCheckingTopic, task, task.getClass());
         }
     }

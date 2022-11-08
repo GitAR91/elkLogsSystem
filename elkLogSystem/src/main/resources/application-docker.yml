@@ -6,3 +6,7 @@ spring:
   kafka:
     producer:
       bootstrap-servers: ${LOGS_KAFKA_SERVER:logs-kafka:9092}
+
+thirdParty:
+  api:
+    url: ${THIRD_PARTY_URL:logs-third-party:8081}

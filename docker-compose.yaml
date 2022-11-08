@@ -36,6 +36,7 @@ services:
       - logs-kafka
     environment:
       LOGS_KAFKA_SERVER: logs-kafka:9092
+      THIRD_PARTY_URL: http://logs-third-party:8081/
     ports:
       - 7080:8080
     networks:
@@ -52,6 +53,18 @@ services:
     depends_on:
       - logs-zookeeper
       - logs-kafka
+    networks:
+      - net-logs
+      
+  logs-third-party:
+    build:
+      context: ./thirdPartyApi
+    volumes: 
+    - ./logs:/opt/logs
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - logs-application
     networks:
       - net-logs
       

@@ -22,6 +22,5 @@ public class ConsumerThreadHandler implements Runnable{
         catch (Exception ex){
             System.out.println(ex.getMessage());
         }
-
     }
 }
