@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:fragment="head()">
+  <meta charset="UTF-8">
+  <title>App logs</title>
+  <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>App logs page</h1>
+<main>
+  <div>
+    <form method="post" th:action="@{/logs/get_by_request_id}" class="request-id-form">
+      <div class="request-id-element">
+        <input type="text" id="requestId" placeholder="Put id here"
+               name="requestId" required>
+      </div>
+      <div class="request-id-element">
+        <button type="submit">OK</button>
+      </div>
+    </form>
+  </div>
+</main>
+</body>
+</html>

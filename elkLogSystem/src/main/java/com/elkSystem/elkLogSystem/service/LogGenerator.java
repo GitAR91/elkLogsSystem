@@ -9,10 +9,17 @@ import java.util.stream.LongStream;
 @Slf4j
 @Service
 public class LogGenerator {
-    Logger logger = LoggerFactory.getLogger(LogGenerator.class);
     public void generate(int count) {
-        logger.info("Start generating logs");
-        LongStream.range(0, count)
-                .forEach(i -> logger.info("Log {}", i));
+        log.info("Start generating logs");
+//        LongStream.range(0, count)
+//                .forEach(i -> logger.info("Log {}", i));
+        for(int i = 0; i < count; i++){
+            try{
+                log.info("Log {}", i);
+                Thread.sleep(1000);
+            } catch (InterruptedException ex){
+                log.error("Interrupted");
+            }
+        }
     }
 }

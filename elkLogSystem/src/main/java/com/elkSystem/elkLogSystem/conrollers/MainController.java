@@ -23,7 +23,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
-@RestController
+@RestController(value = "")
 @RequiredArgsConstructor
 public class MainController {
     Logger logger = LoggerFactory.getLogger(MainController.class);
@@ -33,20 +33,11 @@ public class MainController {
 
     @GetMapping("/generate")
     public ResponseEntity test(@RequestParam(name = "count", defaultValue = "0") Integer count) {
-        String requestID = MDC.get("CorrelationId");
+        String requestID = MDC.get("RequestId");
         log.info("Test request received with count: {}", count);
         Task task = new Task("Some task", requestID);
         generator.generate(count);
         return ResponseEntity.ok().body(task);
-    }
-
-    @GetMapping("/")
-    public ResponseEntity index(RequestEntity<String> request) {
-        String requestID = MDC.get("CorrelationId");
-        log.info("On index page");
-        Task task = new Task("Some task", requestID);
-        kafkaProducer.sendToWorker(task);
-        return ResponseEntity.ok(task);
     }
 
     @GetMapping("/getObj")

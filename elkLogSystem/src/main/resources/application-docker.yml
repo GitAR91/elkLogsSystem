@@ -10,3 +10,8 @@ spring:
 thirdParty:
   api:
     url: ${THIRD_PARTY_URL:logs-third-party:8081}
+
+elasticsearch:
+  data:
+    host: elasticsearch
+    port: 9200

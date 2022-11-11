@@ -1,0 +1,13 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.request-id-form{
+    display: flex;
+    margin: 20px 0;
+}
+.request-id-element {
+    margin: 0 10px;
+}

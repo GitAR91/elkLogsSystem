@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="index :: head()"></head>
+<body>
+<main>
+  <div>
+    <form method="post" th:action="@{/logs/get_by_request_id}" class="request-id-form">
+      <div class="request-id-element">
+        <input type="text" id="requestId" placeholder="Put id here"
+               name="requestId" required>
+      </div>
+      <div class="request-id-element">
+        <button type="submit">OK</button>
+      </div>
+    </form>
+  </div>
+  <div>
+    <table>
+      <thead class="table-light sticky-thead">
+        <tr>
+          <th>Log level</th>
+          <th>Time stamp</th>
+          <th>Logger</th>
+          <th>Text</th>
+          <th>Request ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <th:block th:each="log: ${logs}">
+          <tr>
+            <td th:text="${log.logLevel}"/>
+            <td th:text="${log.timestamp}"/>
+            <td th:text="${log.logger}"/>
+            <td th:text="${log.text}"/>
+            <td th:text="${log.requestId}"/>
+          </tr>
+        </th:block>
+      </tbody>
+
+    </table>
+<!--    <th:block th:each="log : ${logs}">-->
+<!--      <div>-->
+<!--        <ul>-->
+<!--          <li th:text="${log.text}"/>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </th:block>-->
+  </div>
+
+</main>
+</body>
+</html>
