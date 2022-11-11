@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
+import org.springframework.data.domain.*;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,6 +55,20 @@ public class MainController {
         log.info("Single response entity object");
         SomeObj obj = new SomeObj(1, "Some text");
         return ResponseEntity.ok(obj);
+    }
+
+    @GetMapping("/getObjPage")
+    @LogObjectId
+    public Page<SomeObj> getObjPage(){
+        log.info("Page object");
+        SomeObj obj1 = new SomeObj(1, "Some text 1");
+        SomeObj obj2 = new SomeObj(2, "Some text 2");
+        SomeObj obj3 = new SomeObj(3, "Some text 3");
+        SomeObj obj4 = new SomeObj(4, "Some text 4");
+        List<SomeObj> result = Arrays.asList(obj1, obj2, obj3, obj4);
+        Pageable paging = PageRequest.of(0, 10);
+        Page<SomeObj> page = new PageImpl<>(result, paging, result.size());
+        return page;
     }
 
     @GetMapping("/getObjList")

@@ -8,6 +8,8 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.MDC;
+import org.springframework.data.domain.Page;
+import org.springframework.data.util.Streamable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
@@ -34,7 +36,11 @@ public class LoggerAnnotation {
        if (isCollection(logObject)){
            logCollectionIds(logObject);
         } else{
-           logObjectId(logObject);
+           if(isPage(logObject)){
+               logPagingIds(logObject);
+           } else {
+               logObjectId(logObject);
+           }
        }
        return proceed;
     }
@@ -42,6 +48,13 @@ public class LoggerAnnotation {
     private void logCollectionIds(Object obj){
         Collection<Object> collection = (Collection<Object>) obj;
         for(Object object: collection){
+            logObjectId(object);
+        }
+    }
+
+    private void logPagingIds(Object obj){
+        Page<Object> page = (Page<Object>) obj;
+        for(Object object: page){
             logObjectId(object);
         }
     }
@@ -57,6 +70,13 @@ public class LoggerAnnotation {
 
     private boolean isCollection(Object obj){
         if(obj instanceof Collection){
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isPage(Object obj){
+        if(obj instanceof Page){
             return true;
         }
         return false;

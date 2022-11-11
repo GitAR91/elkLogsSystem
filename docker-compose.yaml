@@ -1,6 +1,21 @@
 version: "3.2"
 
 services:
+  logs-postgres:
+    build:
+      context: ./postgres
+    ports:
+      - "5440:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_NAME: postgres
+      POSTGRES_HOST: logs-postgres
+      POSTGRES_PORT: 5432
+    networks:
+      - net-logs
+
   logs-zookeeper:
     image: wurstmeister/zookeeper
     ports:
@@ -34,6 +49,7 @@ services:
     depends_on:
       - logs-zookeeper
       - logs-kafka
+      - logs-postgres
     environment:
       LOGS_KAFKA_SERVER: logs-kafka:9092
       THIRD_PARTY_URL: http://logs-third-party:8081/

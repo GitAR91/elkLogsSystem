@@ -15,10 +15,13 @@ public class MdcFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-        String requestId = getCorrelationId();
-        MDC.put("RequestId", requestId);
         HttpServletRequest req = (HttpServletRequest) request;
         HeaderMapRequestWrapper requestWrapper = new HeaderMapRequestWrapper(req);
+        String requestId = requestWrapper.getHeader("RequestId");
+        if(requestId == null){
+            requestId = getCorrelationId();
+            MDC.put("RequestId", requestId);
+        }
         requestWrapper.addHeader("RequestId", requestId);
 
         HttpServletResponse res = (HttpServletResponse) response;

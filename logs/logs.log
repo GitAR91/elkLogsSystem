@@ -20,3 +20,737 @@
 2022-11-11T05:05:20,674 [3e55103e-1d8d-476e-a88a-070f21b07f4a] [] INFO  c.e.e.service.LogGenerator: Log 4 
 2022-11-11T05:05:21,675 [3e55103e-1d8d-476e-a88a-070f21b07f4a] [] INFO  c.e.e.service.LogGenerator: Log 5 
 2022-11-11T05:05:22,675 [3e55103e-1d8d-476e-a88a-070f21b07f4a] [] INFO  c.e.e.service.LogGenerator: Log 6 
+2022-11-11T07:53:12,398 [] [] INFO  com.worker.worker.WorkerApplication: Starting WorkerApplication v0.0.1-SNAPSHOT using Java 11.0.14.1 on 401d78345bd7 with PID 1 (/opt/worker-0.0.1-SNAPSHOT.jar started by root in /) 
+2022-11-11T07:53:12,406 [] [] INFO  com.worker.worker.WorkerApplication: The following 1 profile is active: "docker" 
+2022-11-11T07:53:12,588 [] [] INFO  c.e.e.ElkLogSystemApplication: Starting ElkLogSystemApplication v0.0.1-SNAPSHOT using Java 11.0.14.1 on aee205c2c522 with PID 1 (/opt/elkLogSystem-0.0.1-SNAPSHOT.jar started by root in /) 
+2022-11-11T07:53:12,597 [] [] INFO  c.e.e.ElkLogSystemApplication: The following 1 profile is active: "docker" 
+2022-11-11T07:53:13,106 [] [] INFO  c.l.t.ThirdPartyApiApplication: Starting ThirdPartyApiApplication v0.0.1-SNAPSHOT using Java 11.0.14.1 on 8ccaa5d60672 with PID 1 (/opt/thirdPartyApi-0.0.1-SNAPSHOT.jar started by root in /) 
+2022-11-11T07:53:13,112 [] [] INFO  c.l.t.ThirdPartyApiApplication: The following 1 profile is active: "docker" 
+2022-11-11T07:53:14,411 [] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-11-11T07:53:14,447 [] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces. 
+2022-11-11T07:53:14,934 [] [] INFO  com.worker.worker.WorkerApplication: Started WorkerApplication in 3.809 seconds (JVM running for 4.51) 
+2022-11-11T07:53:14,982 [] [] INFO  o.a.k.c.consumer.ConsumerConfig: ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [logs-kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = logs-module
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = logs-module-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.BytesDeserializer
+ 
+2022-11-11T07:53:15,468 [] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http) 
+2022-11-11T07:53:15,501 [] [] INFO  o.a.catalina.core.StandardService: Starting service [Tomcat] 
+2022-11-11T07:53:15,501 [] [] INFO  o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.68] 
+2022-11-11T07:53:15,535 [] [] INFO  o.a.k.common.utils.AppInfoParser: Kafka version: 3.1.1 
+2022-11-11T07:53:15,538 [] [] INFO  o.a.k.common.utils.AppInfoParser: Kafka commitId: 97671528ba54a138 
+2022-11-11T07:53:15,538 [] [] INFO  o.a.k.common.utils.AppInfoParser: Kafka startTimeMs: 1668153195532 
+2022-11-11T07:53:15,545 [] [] INFO  o.a.k.c.consumer.KafkaConsumer: [Consumer clientId=logs-module, groupId=logs-module-group] Subscribed to topic(s): task-queue 
+2022-11-11T07:53:15,663 [] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext 
+2022-11-11T07:53:15,664 [] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2374 ms 
+2022-11-11T07:53:16,218 [] [] INFO  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Node -1 disconnected. 
+2022-11-11T07:53:16,222 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Connection to node -1 (logs-kafka/172.22.0.5:9092) could not be established. Broker may not be available. 
+2022-11-11T07:53:16,224 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:53:16,320 [] [] INFO  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Node -1 disconnected. 
+2022-11-11T07:53:16,320 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Connection to node -1 (logs-kafka/172.22.0.5:9092) could not be established. Broker may not be available. 
+2022-11-11T07:53:16,320 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:53:16,472 [] [] INFO  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Node -1 disconnected. 
+2022-11-11T07:53:16,473 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Connection to node -1 (logs-kafka/172.22.0.5:9092) could not be established. Broker may not be available. 
+2022-11-11T07:53:16,473 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:53:16,645 [] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http) 
+2022-11-11T07:53:16,650 [] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path '' 
+2022-11-11T07:53:16,666 [] [] INFO  o.a.catalina.core.StandardService: Starting service [Tomcat] 
+2022-11-11T07:53:16,667 [] [] INFO  o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.65] 
+2022-11-11T07:53:16,671 [] [] INFO  c.l.t.ThirdPartyApiApplication: Started ThirdPartyApiApplication in 4.847 seconds (JVM running for 5.661) 
+2022-11-11T07:53:16,726 [] [] INFO  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Node -1 disconnected. 
+2022-11-11T07:53:16,727 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Connection to node -1 (logs-kafka/172.22.0.5:9092) could not be established. Broker may not be available. 
+2022-11-11T07:53:16,727 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:53:16,822 [] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext 
+2022-11-11T07:53:16,822 [] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4103 ms 
+2022-11-11T07:53:17,079 [] [] INFO  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Node -1 disconnected. 
+2022-11-11T07:53:17,080 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Connection to node -1 (logs-kafka/172.22.0.5:9092) could not be established. Broker may not be available. 
+2022-11-11T07:53:17,080 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:53:17,165 [] [] INFO  o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-11-11T07:53:17,346 [] [] INFO  org.hibernate.Version: HHH000412: Hibernate ORM core version 5.6.10.Final 
+2022-11-11T07:53:17,708 [] [] INFO  o.h.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-11-11T07:53:17,939 [] [] INFO  com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting... 
+2022-11-11T07:53:18,132 [] [] INFO  com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed. 
+2022-11-11T07:53:18,173 [] [] INFO  org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-11-11T07:53:18,609 [] [] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-11-11T07:53:18,626 [] [] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-11-11T07:53:19,680 [] [] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2022-11-11T07:53:19,938 [] [] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page template: index 
+2022-11-11T07:53:20,010 [] [] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'mainController' method 
+com.elkSystem.elkLogSystem.conrollers.MainController#getObjList()
+to {GET [/getObjList]}: There is already 'mainController' bean method
+com.elkSystem.elkLogSystem.conrollers.MainController#getObjPage() mapped. 
+2022-11-11T07:53:20,012 [] [] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-11-11T07:53:20,016 [] [] INFO  com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated... 
+2022-11-11T07:53:20,030 [] [] INFO  com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed. 
+2022-11-11T07:53:20,034 [] [] INFO  o.a.catalina.core.StandardService: Stopping service [Tomcat] 
+2022-11-11T07:53:20,052 [] [] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener: 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2022-11-11T07:53:20,082 [] [] ERROR o.s.boot.SpringApplication: Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'mainController' method 
+com.elkSystem.elkLogSystem.conrollers.MainController#getObjList()
+to {GET [/getObjList]}: There is already 'mainController' bean method
+com.elkSystem.elkLogSystem.conrollers.MainController#getObjPage() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.elkSystem.elkLogSystem.ElkLogSystemApplication.main(ElkLogSystemApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'mainController' method 
+com.elkSystem.elkLogSystem.conrollers.MainController#getObjList()
+to {GET [/getObjList]}: There is already 'mainController' bean method
+com.elkSystem.elkLogSystem.conrollers.MainController#getObjPage() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 24 common frames omitted
+2022-11-11T07:53:42,086 [] [] INFO  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 24255 ms. 
+2022-11-11T07:53:42,087 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:54:01,424 [] [] INFO  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Node -1 disconnected. 
+2022-11-11T07:54:01,425 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Connection to node -1 (logs-kafka/172.22.0.5:9092) could not be established. Broker may not be available. 
+2022-11-11T07:54:01,425 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:54:02,440 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Error connecting to node logs-kafka:9092 (id: -1 rack: null) 
+java.net.UnknownHostException: logs-kafka: Temporary failure in name resolution
+	at java.base/java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1519)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1509)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1368)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27)
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:110)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:511)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:468)
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173)
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:988)
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1161)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1049)
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:558)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:265)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:227)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.awaitMetadataUpdate(ConsumerNetworkClient.java:164)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:258)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.coordinatorUnknownAndUnready(ConsumerCoordinator.java:459)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll(ConsumerCoordinator.java:487)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded(KafkaConsumer.java:1262)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1233)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1166)
+	at com.worker.worker.kafka.consumer.KafkaMultiplyThreadConsumer.execute(KafkaMultiplyThreadConsumer.java:39)
+	at com.worker.worker.kafka.runner.ConsumerRunner.run(ConsumerRunner.java:27)
+	at com.worker.worker.config.ApplicationConfig.runConsumer(ApplicationConfig.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-11-11T07:54:02,440 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:54:03,335 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Error connecting to node logs-kafka:9092 (id: -1 rack: null) 
+java.net.UnknownHostException: logs-kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1509)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1368)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27)
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:110)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:511)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:468)
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173)
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:988)
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1161)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1049)
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:558)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:265)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:227)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.awaitMetadataUpdate(ConsumerNetworkClient.java:164)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:258)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.coordinatorUnknownAndUnready(ConsumerCoordinator.java:459)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll(ConsumerCoordinator.java:487)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded(KafkaConsumer.java:1262)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1233)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1166)
+	at com.worker.worker.kafka.consumer.KafkaMultiplyThreadConsumer.execute(KafkaMultiplyThreadConsumer.java:39)
+	at com.worker.worker.kafka.runner.ConsumerRunner.run(ConsumerRunner.java:27)
+	at com.worker.worker.config.ApplicationConfig.runConsumer(ApplicationConfig.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-11-11T07:54:03,336 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:54:04,390 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Error connecting to node logs-kafka:9092 (id: -1 rack: null) 
+java.net.UnknownHostException: logs-kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1509)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1368)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27)
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:110)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:511)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:468)
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173)
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:988)
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1161)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1049)
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:558)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:265)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:227)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.awaitMetadataUpdate(ConsumerNetworkClient.java:164)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:258)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.coordinatorUnknownAndUnready(ConsumerCoordinator.java:459)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll(ConsumerCoordinator.java:487)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded(KafkaConsumer.java:1262)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1233)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1166)
+	at com.worker.worker.kafka.consumer.KafkaMultiplyThreadConsumer.execute(KafkaMultiplyThreadConsumer.java:39)
+	at com.worker.worker.kafka.runner.ConsumerRunner.run(ConsumerRunner.java:27)
+	at com.worker.worker.config.ApplicationConfig.runConsumer(ApplicationConfig.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-11-11T07:54:04,392 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:54:05,394 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Error connecting to node logs-kafka:9092 (id: -1 rack: null) 
+java.net.UnknownHostException: logs-kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1509)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1368)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27)
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:110)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:511)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:468)
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173)
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:988)
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1161)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1049)
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:558)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:265)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:227)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.awaitMetadataUpdate(ConsumerNetworkClient.java:164)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:258)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.coordinatorUnknownAndUnready(ConsumerCoordinator.java:459)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll(ConsumerCoordinator.java:487)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded(KafkaConsumer.java:1262)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1233)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1166)
+	at com.worker.worker.kafka.consumer.KafkaMultiplyThreadConsumer.execute(KafkaMultiplyThreadConsumer.java:39)
+	at com.worker.worker.kafka.runner.ConsumerRunner.run(ConsumerRunner.java:27)
+	at com.worker.worker.config.ApplicationConfig.runConsumer(ApplicationConfig.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-11-11T07:54:05,395 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:54:06,250 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Error connecting to node logs-kafka:9092 (id: -1 rack: null) 
+java.net.UnknownHostException: logs-kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1509)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1368)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27)
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:110)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:511)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:468)
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173)
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:988)
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1161)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1049)
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:558)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:265)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:227)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.awaitMetadataUpdate(ConsumerNetworkClient.java:164)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:258)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.coordinatorUnknownAndUnready(ConsumerCoordinator.java:459)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll(ConsumerCoordinator.java:487)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded(KafkaConsumer.java:1262)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1233)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1166)
+	at com.worker.worker.kafka.consumer.KafkaMultiplyThreadConsumer.execute(KafkaMultiplyThreadConsumer.java:39)
+	at com.worker.worker.kafka.runner.ConsumerRunner.run(ConsumerRunner.java:27)
+	at com.worker.worker.config.ApplicationConfig.runConsumer(ApplicationConfig.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-11-11T07:54:06,251 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:54:07,306 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Error connecting to node logs-kafka:9092 (id: -1 rack: null) 
+java.net.UnknownHostException: logs-kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1509)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1368)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27)
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:110)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:511)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:468)
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173)
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:988)
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1161)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1049)
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:558)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:265)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:227)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.awaitMetadataUpdate(ConsumerNetworkClient.java:164)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:258)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.coordinatorUnknownAndUnready(ConsumerCoordinator.java:459)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll(ConsumerCoordinator.java:487)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded(KafkaConsumer.java:1262)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1233)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1166)
+	at com.worker.worker.kafka.consumer.KafkaMultiplyThreadConsumer.execute(KafkaMultiplyThreadConsumer.java:39)
+	at com.worker.worker.kafka.runner.ConsumerRunner.run(ConsumerRunner.java:27)
+	at com.worker.worker.config.ApplicationConfig.runConsumer(ApplicationConfig.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-11-11T07:54:07,307 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:54:08,413 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Error connecting to node logs-kafka:9092 (id: -1 rack: null) 
+java.net.UnknownHostException: logs-kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1509)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1368)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27)
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:110)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:511)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:468)
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173)
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:988)
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1161)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1049)
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:558)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:265)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:227)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.awaitMetadataUpdate(ConsumerNetworkClient.java:164)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:258)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.coordinatorUnknownAndUnready(ConsumerCoordinator.java:459)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll(ConsumerCoordinator.java:487)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded(KafkaConsumer.java:1262)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1233)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1166)
+	at com.worker.worker.kafka.consumer.KafkaMultiplyThreadConsumer.execute(KafkaMultiplyThreadConsumer.java:39)
+	at com.worker.worker.kafka.runner.ConsumerRunner.run(ConsumerRunner.java:27)
+	at com.worker.worker.config.ApplicationConfig.runConsumer(ApplicationConfig.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-11-11T07:54:08,414 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:54:09,420 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Error connecting to node logs-kafka:9092 (id: -1 rack: null) 
+java.net.UnknownHostException: logs-kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1509)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1368)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27)
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:110)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:511)
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:468)
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173)
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:988)
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1161)
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1049)
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:558)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:265)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:227)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.awaitMetadataUpdate(ConsumerNetworkClient.java:164)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:258)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.coordinatorUnknownAndUnready(ConsumerCoordinator.java:459)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll(ConsumerCoordinator.java:487)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded(KafkaConsumer.java:1262)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1233)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1166)
+	at com.worker.worker.kafka.consumer.KafkaMultiplyThreadConsumer.execute(KafkaMultiplyThreadConsumer.java:39)
+	at com.worker.worker.kafka.runner.ConsumerRunner.run(ConsumerRunner.java:27)
+	at com.worker.worker.config.ApplicationConfig.runConsumer(ApplicationConfig.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-11-11T07:54:09,421 [] [] WARN  o.a.kafka.clients.NetworkClient: [Consumer clientId=logs-module, groupId=logs-module-group] Bootstrap broker logs-kafka:9092 (id: -1 rack: null) disconnected 
+2022-11-11T07:54:10,030 [] [] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler: Unexpected error occurred in scheduled task 
+org.apache.kafka.common.errors.InterruptException: java.lang.InterruptedException
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.maybeThrowInterruptException(ConsumerNetworkClient.java:520)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:281)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:227)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.awaitMetadataUpdate(ConsumerNetworkClient.java:164)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:258)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.coordinatorUnknownAndUnready(ConsumerCoordinator.java:459)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll(ConsumerCoordinator.java:487)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded(KafkaConsumer.java:1262)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1233)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1166)
+	at com.worker.worker.kafka.consumer.KafkaMultiplyThreadConsumer.execute(KafkaMultiplyThreadConsumer.java:39)
+	at com.worker.worker.kafka.runner.ConsumerRunner.run(ConsumerRunner.java:27)
+	at com.worker.worker.config.ApplicationConfig.runConsumer(ApplicationConfig.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.InterruptedException: null
+	... 26 common frames omitted
+2022-11-11T08:21:39,230 [] [] INFO  com.worker.worker.WorkerApplication: Starting WorkerApplication v0.0.1-SNAPSHOT using Java 11.0.14.1 on 401d78345bd7 with PID 1 (/opt/worker-0.0.1-SNAPSHOT.jar started by root in /) 
+2022-11-11T08:21:39,235 [] [] INFO  com.worker.worker.WorkerApplication: The following 1 profile is active: "docker" 
+2022-11-11T08:21:39,784 [] [] INFO  c.e.e.ElkLogSystemApplication: Starting ElkLogSystemApplication v0.0.1-SNAPSHOT using Java 11.0.14.1 on 1da06faad0ec with PID 1 (/opt/elkLogSystem-0.0.1-SNAPSHOT.jar started by root in /) 
+2022-11-11T08:21:39,792 [] [] INFO  c.e.e.ElkLogSystemApplication: The following 1 profile is active: "docker" 
+2022-11-11T08:21:40,113 [] [] INFO  c.l.t.ThirdPartyApiApplication: Starting ThirdPartyApiApplication v0.0.1-SNAPSHOT using Java 11.0.14.1 on 020547563b52 with PID 1 (/opt/thirdPartyApi-0.0.1-SNAPSHOT.jar started by root in /) 
+2022-11-11T08:21:40,120 [] [] INFO  c.l.t.ThirdPartyApiApplication: The following 1 profile is active: "docker" 
+2022-11-11T08:21:41,911 [] [] INFO  com.worker.worker.WorkerApplication: Started WorkerApplication in 4.211 seconds (JVM running for 4.985) 
+2022-11-11T08:21:41,928 [] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-11-11T08:21:42,003 [] [] INFO  o.a.k.c.consumer.ConsumerConfig: ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [logs-kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = logs-module
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = logs-module-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.BytesDeserializer
+ 
+2022-11-11T08:21:42,026 [] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 56 ms. Found 0 JPA repository interfaces. 
+2022-11-11T08:21:42,399 [] [] INFO  o.a.k.common.utils.AppInfoParser: Kafka version: 3.1.1 
+2022-11-11T08:21:42,403 [] [] INFO  o.a.k.common.utils.AppInfoParser: Kafka commitId: 97671528ba54a138 
+2022-11-11T08:21:42,404 [] [] INFO  o.a.k.common.utils.AppInfoParser: Kafka startTimeMs: 1668154902395 
+2022-11-11T08:21:42,410 [] [] INFO  o.a.k.c.consumer.KafkaConsumer: [Consumer clientId=logs-module, groupId=logs-module-group] Subscribed to topic(s): task-queue 
+2022-11-11T08:21:42,847 [] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http) 
+2022-11-11T08:21:42,868 [] [] INFO  o.a.catalina.core.StandardService: Starting service [Tomcat] 
+2022-11-11T08:21:42,869 [] [] INFO  o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.68] 
+2022-11-11T08:21:43,008 [] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext 
+2022-11-11T08:21:43,008 [] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2741 ms 
+2022-11-11T08:21:43,065 [] [] INFO  org.apache.kafka.clients.Metadata: [Consumer clientId=logs-module, groupId=logs-module-group] Cluster ID: vEd5Bk8TRrOQCXrUqTpAjg 
+2022-11-11T08:21:43,067 [] [] INFO  o.a.k.c.c.i.ConsumerCoordinator: [Consumer clientId=logs-module, groupId=logs-module-group] Discovered group coordinator logs-kafka:9092 (id: 2147482646 rack: null) 
+2022-11-11T08:21:43,072 [] [] INFO  o.a.k.c.c.i.ConsumerCoordinator: [Consumer clientId=logs-module, groupId=logs-module-group] (Re-)joining group 
+2022-11-11T08:21:43,125 [] [] INFO  o.a.k.c.c.i.ConsumerCoordinator: [Consumer clientId=logs-module, groupId=logs-module-group] Successfully joined group with generation Generation{generationId=1, memberId='logs-module-d46dd9b4-c894-425d-9303-49e63eb2b5d6', protocol='range'} 
+2022-11-11T08:21:43,129 [] [] INFO  o.a.k.c.c.i.ConsumerCoordinator: [Consumer clientId=logs-module, groupId=logs-module-group] Finished assignment for group at generation 1: {logs-module-d46dd9b4-c894-425d-9303-49e63eb2b5d6=Assignment(partitions=[task-queue-0])} 
+2022-11-11T08:21:43,250 [] [] INFO  o.a.k.c.c.i.ConsumerCoordinator: [Consumer clientId=logs-module, groupId=logs-module-group] Successfully synced group in generation Generation{generationId=1, memberId='logs-module-d46dd9b4-c894-425d-9303-49e63eb2b5d6', protocol='range'} 
+2022-11-11T08:21:43,251 [] [] INFO  o.a.k.c.c.i.ConsumerCoordinator: [Consumer clientId=logs-module, groupId=logs-module-group] Notifying assignor about the new Assignment(partitions=[task-queue-0]) 
+2022-11-11T08:21:43,256 [] [] INFO  o.a.k.c.c.i.ConsumerCoordinator: [Consumer clientId=logs-module, groupId=logs-module-group] Adding newly assigned partitions: task-queue-0 
+2022-11-11T08:21:43,280 [] [] INFO  o.a.k.c.c.i.ConsumerCoordinator: [Consumer clientId=logs-module, groupId=logs-module-group] Found no committed offset for partition task-queue-0 
+2022-11-11T08:21:43,328 [] [] INFO  o.a.k.c.c.i.SubscriptionState: [Consumer clientId=logs-module, groupId=logs-module-group] Resetting offset for partition task-queue-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[logs-kafka:9092 (id: 1001 rack: null)], epoch=absent}}. 
+2022-11-11T08:21:43,729 [] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path '' 
+2022-11-11T08:21:43,746 [] [] INFO  c.l.t.ThirdPartyApiApplication: Started ThirdPartyApiApplication in 5.314 seconds (JVM running for 6.151) 
+2022-11-11T08:21:43,994 [] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http) 
+2022-11-11T08:21:44,010 [] [] INFO  o.a.catalina.core.StandardService: Starting service [Tomcat] 
+2022-11-11T08:21:44,011 [] [] INFO  o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.65] 
+2022-11-11T08:21:44,117 [] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext 
+2022-11-11T08:21:44,117 [] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4141 ms 
+2022-11-11T08:21:44,423 [] [] INFO  o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-11-11T08:21:44,555 [] [] INFO  org.hibernate.Version: HHH000412: Hibernate ORM core version 5.6.10.Final 
+2022-11-11T08:21:44,585 [343c006c-8da8-497b-9fa6-f2ba1d0d112e] [] INFO  com.worker.worker.service.Worker: Thread number 1. In worker with task "Task text" 
+2022-11-11T08:21:44,585 [81f011f6-0229-4730-81e0-6492d12ec3a1] [] INFO  com.worker.worker.service.Worker: Thread number 1. In worker with task "Task text" 
+2022-11-11T08:21:44,585 [51eb6001-7d76-4f59-886d-b705f09f2e9b] [] INFO  com.worker.worker.service.Worker: Thread number 1. In worker with task "Task text" 
+2022-11-11T08:21:44,940 [] [] INFO  o.h.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-11-11T08:21:45,209 [] [] INFO  com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting... 
+2022-11-11T08:21:45,384 [] [] INFO  com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed. 
+2022-11-11T08:21:45,430 [] [] INFO  org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-11-11T08:21:45,588 [fad3dbfc-211a-4cfa-95b7-bf612b6ab9ac] [] INFO  com.worker.worker.service.Worker: Thread number 1. In worker with task "Task text" 
+2022-11-11T08:21:45,807 [] [] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-11-11T08:21:45,828 [] [] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-11-11T08:21:46,907 [] [] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2022-11-11T08:21:47,134 [] [] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page template: index 
+2022-11-11T08:21:47,674 [] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path '' 
+2022-11-11T08:21:47,691 [] [] INFO  c.e.e.ElkLogSystemApplication: Started ElkLogSystemApplication in 9.709 seconds (JVM running for 10.665) 
+2022-11-11T08:22:08,497 [] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2022-11-11T08:22:08,498 [] [] INFO  o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet' 
+2022-11-11T08:22:08,500 [] [] INFO  o.s.web.servlet.DispatcherServlet: Completed initialization in 1 ms 
+2022-11-11T08:22:08,623 [cb46921d-f7af-44ce-94a4-f59c6c635dcd] [] INFO  c.e.e.conrollers.MainController: Collection object 
+2022-11-11T08:22:08,624 [cb46921d-f7af-44ce-94a4-f59c6c635dcd] [1] INFO  c.e.e.a.impl.LoggerAnnotation: Returned object class com.elkSystem.elkLogSystem.models.impl.SomeObj 
+2022-11-11T08:22:08,624 [cb46921d-f7af-44ce-94a4-f59c6c635dcd] [2] INFO  c.e.e.a.impl.LoggerAnnotation: Returned object class com.elkSystem.elkLogSystem.models.impl.SomeObj 
+2022-11-11T08:22:08,624 [cb46921d-f7af-44ce-94a4-f59c6c635dcd] [3] INFO  c.e.e.a.impl.LoggerAnnotation: Returned object class com.elkSystem.elkLogSystem.models.impl.SomeObj 
+2022-11-11T08:22:08,624 [cb46921d-f7af-44ce-94a4-f59c6c635dcd] [4] INFO  c.e.e.a.impl.LoggerAnnotation: Returned object class com.elkSystem.elkLogSystem.models.impl.SomeObj 
+2022-11-11T08:22:15,409 [e34ddbac-f263-4ddf-84ad-1dfbaf79d807] [] INFO  c.e.e.conrollers.MainController: Page object 
+2022-11-11T08:22:15,413 [e34ddbac-f263-4ddf-84ad-1dfbaf79d807] [1] INFO  c.e.e.a.impl.LoggerAnnotation: Returned object class com.elkSystem.elkLogSystem.models.impl.SomeObj 
+2022-11-11T08:22:15,413 [e34ddbac-f263-4ddf-84ad-1dfbaf79d807] [2] INFO  c.e.e.a.impl.LoggerAnnotation: Returned object class com.elkSystem.elkLogSystem.models.impl.SomeObj 
+2022-11-11T08:22:15,413 [e34ddbac-f263-4ddf-84ad-1dfbaf79d807] [3] INFO  c.e.e.a.impl.LoggerAnnotation: Returned object class com.elkSystem.elkLogSystem.models.impl.SomeObj 
+2022-11-11T08:22:15,413 [e34ddbac-f263-4ddf-84ad-1dfbaf79d807] [4] INFO  c.e.e.a.impl.LoggerAnnotation: Returned object class com.elkSystem.elkLogSystem.models.impl.SomeObj 
